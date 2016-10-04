@@ -22,7 +22,6 @@ KeyValues g_hMessages;
 char FILE_PATH[PLATFORM_MAX_PATH];
 
 Handle Cv_filepath = INVALID_HANDLE;
-Handle h_ServerAdvertisement;
 float g_fMessageDelay;
 
 
@@ -60,7 +59,6 @@ public Action PrintAdverToAll()
 {
  if(g_iEnable)
  {
-   char cookievalue[12];
    if(!g_hMessages.GotoNextKey())
    {
      g_hMessages.GoBack();
@@ -68,8 +66,7 @@ public Action PrintAdverToAll()
    }
    LoopClients(i)
    {
-     GetClientCookie(i, h_ServerAdvertisement, cookievalue, sizeof(cookievalue));
-     if(IsValidPlayer(i) && StrEqual(cookievalue, ""))
+     if(IsValidPlayer(i))
      {
        char sType[12];
        char sText[256];
