@@ -37,7 +37,7 @@ public Plugin myinfo =
 public OnPluginStart()
 {
   AutoExecConfig(true);
-  CreateConVar("ServerAdvertisement_version", PLUGIN_VERSION, "Server Advertisement plugin", FCVAR_PLUGIN|FCVAR_SPONLY|FCVAR_REPLICATED|FCVAR_NOTIFY);
+  CreateConVar("ServerAdvertisement_version", PLUGIN_VERSION, "Server Advertisement plugin", FCVAR_SPONLY|FCVAR_REPLICATED|FCVAR_NOTIFY);
   Cv_filepath = CreateConVar("ServerAdvertisement_filepath", "addons/sourcemod/configs/ServerAdvertisement.cfg","Path for file with settings");
   GetConVarString(Cv_filepath, FILE_PATH,sizeof(FILE_PATH));
   LoadConfig();
